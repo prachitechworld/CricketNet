@@ -1,0 +1,99 @@
+<div class="animated fadeIn">
+ <div class="row" *ngIf="teamData">
+  <div class="col-6 col-lg-3" *ngFor="let team of teamData">
+    <div class="card">
+      <div class="card-body p-3 clearfix">
+        <i class="bg-primary p-3 font-2xl mr-3 float-left"><img src="http://{{url}}/uploads/{{team.logo_uri}}" alt="" width="50px" height="50px"/></i>
+        
+        <div class="h5 text-primary mb-0 mt-2"><b>Rating :</b>{{team.rating}}</div>
+        <div class="text-muted text-uppercase font-weight-bold font-xs"><b>Points :</b> {{team.points}}</div>                
+      </div>
+    </div>
+  </div>
+ </div>
+ <div class="row">
+  <div class="col-md-9 games-schedule">
+      <div class="card">
+          <div class="games-schedule-title card-header bg-primary text-white">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h5>Cricket Net Teams</h5>
+                  </div>
+              </div>
+          </div>                
+          <div class="games-schedule-items card-body" style="cursor: pointer;" *ngFor="let match of matchData"  (click)="jump(match.id)">
+              <div class="row games-team" >
+                  <div class="col-md-5">
+                      <img src="http://{{url}}/uploads/{{match.teamALogo}}" width="25px" height="25px" alt="{{match.teamA}}">
+                      <span>  {{match.teamA}}<i *ngIf="match.winner==match.teamA" class="fa fa-trophy" style="color:gold"></i></span>
+                  </div>
+                  <div class="col-md-2">
+                      <h4 class="img-circle text-primary">vs</h4>
+                  </div>
+                  <div class="col-md-5">
+                      <img src="http://{{url}}/uploads/{{match.teamBLogo}}" width="25px" height="25px" alt="{{match.teamB}}">
+                      <span>  {{match.teamB}} <i *ngIf="match.winner==match.teamB" class="fa fa-trophy" style="color:gold"></i>
+                      </span>
+                  </div>
+              </div>
+              <div class="row games-info">
+                  <div class="col-md-5">
+                      <p><span class="glyphicon glyphicon-play-circle"></span> <small>{{match.match_on}}</small></p>
+                  </div>
+                  <div class="col-md-2"><p class="games-dash"></p></div>
+                  <div class="col-md-5"><p><small>{{match.stadium}}</small></p></div>
+              </div>
+          </div>
+          <!-- <div class="games-schedule-footer card-footer">
+              <div class="row">
+                  <div class="col-md-6">
+                      <p class="text-left">19 March, 2014</p>
+                  </div>
+                  <div class="col-md-6">
+                      <p class="text-right"></p>
+                  </div>
+              </div>
+          </div> -->
+      </div>
+  </div>
+</div>
+ <div class="card-columns cols-2">
+    <div class="card">
+        <div class="card-header">
+          Player Chart
+          <div class="card-header-actions">
+            <small class="text-muted">Highest Scores</small>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart"
+            [data]="playerChartData"
+            [labels]="playerChartLabels"
+            [chartType]="pieChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+          Team Chart
+          <div class="card-header-actions">
+            <small class="text-muted">Matches Win</small>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart"
+            [data]="teamChartData"
+            [labels]="teamChartLabels"
+            [chartType]="pieChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+    </div>
+ </div>
+
+</div>

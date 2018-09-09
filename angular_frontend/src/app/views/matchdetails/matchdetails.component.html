@@ -1,0 +1,37 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header">
+                <i class="fa fa-align-justify"></i> Matches
+              </div>
+              <div class="card-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Stadium</th>
+                      <th>Date</th>
+                      <th>Teams</th>
+                      <th>Winner</th>
+                      <th>View Details</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngIf="matchDetails">
+                    <tr *ngFor="let match of matchDetails">
+                      <td>{{match.id}}</td>
+                      <td>{{match.stadium}}</td>
+                      <td>{{match.match_on}}</td>
+                      <td>{{match.teamA}} &nbsp; <span class="text-primary">v/s</span> &nbsp;{{match.teamB}}</td>
+                      <td>{{match.winner}}</td>
+                      <td (click)="jump(match.id)"><i class="icon-people icons"></i></td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>

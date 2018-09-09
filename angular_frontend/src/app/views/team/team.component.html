@@ -1,0 +1,31 @@
+<div class="animated fadeIn">
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              <i class="fa fa-align-justify"></i> Teams
+            </div>
+            <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Logo</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="teamData">
+                  <tr *ngFor="let team of teamData">
+                    <td><a routerLink="/players/{{team.id}}">{{team.id}}</a></td>
+                    <td>{{team.name}}</td>
+                    <td><img src="http://{{url}}/uploads/{{team.logo_uri}}" alt="" width="50px;" height="50px"/></td>                    
+                  </tr>
+                  
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+        </div>
+  </div>
+</div>

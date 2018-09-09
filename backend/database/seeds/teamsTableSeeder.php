@@ -33,7 +33,7 @@ class teamsTableSeeder extends Seeder
                 [
                     'name' => 'Royal Challengers',
                     'logo_uri' => 'teams/15358317232.png',
-                    'club_state' => 2,                    
+                    'club_state' => 1,                    
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
                 ],

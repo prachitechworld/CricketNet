@@ -16,21 +16,21 @@ class teamPointsTableSeeder extends Seeder
             DB::table('team_points')->insert([
 
                 [
-                    'team_id' => 1,
+                    'team_id' => 7,
                     'points' => 153,
                     'rating' => 3,                    
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),                   
                 ],
                 [
-                    'team_id' => 2,
+                    'team_id' => 8,
                     'points' => 200,
                     'rating' => 2,                    
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),                   
                 ],
                 [
-                    'team_id' => 3,
+                    'team_id' => 9,
                     'points' => 300,
                     'rating' => 1,                    
                     'created_at' => date('Y-m-d H:i:s'),

@@ -23,6 +23,8 @@ Route::get('teams/{id}', 'TeamsController@show');
 Route::get('players/{team_id}', 'PlayersController@index');
 Route::get('player-history/{id}', 'PlayersController@playerHistory');
 Route::get('match-details', 'MatchDetailsController@index');
+Route::get('match-details/{id}', 'MatchDetailsController@getById');
 Route::get('players-data', 'PlayersController@playersData');
 Route::get('teams-data', array('uses' => 'TeamsController@teamsData','middleware' => ['checkHeader']));
+Route::get('match-players-data/{id}', 'MatchDetailsController@matchTeamData');
 

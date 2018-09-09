@@ -19,7 +19,7 @@ class CreateMatchDetailsTable extends Migration
             $table->date('match_on');
             $table->integer('teamA')->unsigned();
             $table->integer('teamB')->unsigned();
-            $table->integer('winner')->unsigned();
+            $table->integer('winner')->unsigned()->nullable();
             $table->timestamps();
         });
 

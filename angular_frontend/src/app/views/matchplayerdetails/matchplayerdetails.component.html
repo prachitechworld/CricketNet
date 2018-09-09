@@ -1,0 +1,100 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-3"><strong class="text-primary">{{teamA}} v/s {{teamB}}</strong></div>
+    </div>
+  <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+          <div class="card">
+            <div class="card-header bg-info">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3">
+                        <p><img src="http://{{url}}/uploads/{{teamALogo}}" width="25px" height="25px" alt="{{teamA}}"><br/>{{teamA}}</p>
+                        <small>{{teamARuns}}</small>
+                    </div>
+                    <div class="col-md-3">
+                        <p><img src="http://{{url}}/uploads/{{teamBLogo}}" width="25px" height="25px" alt="{{teamB}}"><br/>{{teamB}}</p>
+                        <small>{{teamBRuns}}</small>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+            <div class="card-body">
+              <form class="form-horizontal">
+                  
+
+                  <div class="row">
+                      <div class="col-md-12 mb-4">
+                        <!-- Nav tabs -->
+                        <tabset>
+                          <tab heading="{{teamA}}">
+                              <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th colspan="3">Players</th>
+                                      <th>R</th>
+                                      <th>4s</th>
+                                      <th>6s</th>
+                                      <th>50s</th>
+                                      <th>100s</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody *ngIf="playersAData">
+                                    <tr *ngFor="let player of playersAData">
+                                      <td colspan="3">{{player.name}}</td>
+                                      <td>{{player.runs}}</td>
+                                      <td>{{player.fours}}</td>
+                                      <td>{{player.sixes}}</td>
+                                      <td>{{player.fifties}}</td>
+                                      <td>{{player.hundreds}}</td>
+                                                          
+                                    </tr>
+                                    
+                                  </tbody>
+                                </table>
+                          </tab>
+                          <tab heading="{{teamB}}">
+                              <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th colspan="3">Players</th>
+                                      <th>R</th>
+                                      <th>4s</th>
+                                      <th>6s</th>
+                                      <th>50s</th>
+                                      <th>100s</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody *ngIf="playersBData">
+                                    <tr *ngFor="let player of playersBData">
+                                      <td colspan="3">{{player.name}}</td>
+                                      <td>{{player.runs}}</td>
+                                      <td>{{player.fours}}</td>
+                                      <td>{{player.sixes}}</td>
+                                      <td>{{player.fifties}}</td>
+                                      <td>{{player.hundreds}}</td>
+                                                          
+                                    </tr>
+                                    
+                                  </tbody>
+                                </table>
+                              
+                              </tab>
+                          
+                        </tabset>
+                        </div>
+                        </div>
+               
+               
+                  
+              </form>
+            </div>
+            <div class="card-footer">
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+  </div>
+ </div>
